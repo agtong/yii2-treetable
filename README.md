@@ -11,20 +11,20 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-$ php composer.phar require slatiusa/yii2-treetable
+$ php composer.phar require agtong/yii2-treetable
 ```
 
 or add
 
 ```
-"slatiusa/yii2-treetable": "*"
+"agtong/yii2-treetable": "*"
 ```
 
 to the ```require``` section of your `composer.json` file.
 
 ## Usage
 
-Use ```slatiusa\treetable\Treetable``` widget instead of a Yii Gridview.
+Use ```agtong\treetable\Treetable``` widget instead of a Yii Gridview.
 The example below will collapse every even row in the table below the odd one above it.
 ```
     <?= Treetable::widget([
@@ -36,7 +36,9 @@ The example below will collapse every even row in the table below the odd one ab
                 return ['data-tt-id' => $index];
             }
         },
-        'treetableOptions' => ['expandable' => true, 'indent' => 0],    //Pass configuration options to $().treetable()
+        'treetableOptions' => ['expandable' => true, 'indent' => 0], //Pass configuration options to $().treetable()
+        // 'useOwnCss' => true, // default is false.
+        // eg. add to view -> $this->registerCssFile(Yii::getAlias('@web') . '/css/your_own_treetable.css');
         'columns' => [
             ...
         ]
@@ -50,7 +52,7 @@ nest as you like.
 
 ## Tip
 
-Not all CSS from treetable is included because it breaks heavilly with Bootstrap 
+Not all CSS from treetable is included because it breaks heavilly with Bootstrap
 layout. A css example is included to style the expand/collapse ```<a>``` with an
 image.
 Take a look at the CSS provided with jquery-treetable for more inspiration.

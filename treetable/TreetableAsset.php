@@ -6,21 +6,23 @@
  * @version 1.0
  */
 
-namespace slatiusa\treetable;
+namespace agtong\treetable;
 
-class TreetableAsset extends \Yii\web\AssetBundle {
+use yii\web\AssetBundle;
 
-    public $sourcePath = '@bower/jquery-treetable'; 
-    public $css = [ 
-        'css/jquery.treetable.css', 
+class TreetableAsset extends AssetBundle {
+
+    public $sourcePath = '@bower/jquery-treetable';
+    public $css = [
+        'css/jquery.treetable.css',
     ];
-    public $js = [ 
-        'jquery.treetable.js', 
+    public $js = [
+        'jquery.treetable.js',
     ];
     public $depends = [
        'yii\web\JqueryAsset',
     ];
-    
+
     /**
      * @inheritdoc
      */
